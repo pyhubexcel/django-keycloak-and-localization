@@ -1,0 +1,32 @@
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Authentication App"
+msgstr "Application d'authentification"
+
+msgid "User Information"
+msgstr "Informations sur l'utilisateur"
+
+msgid "Name:"
+msgstr "Nom:"
+
+msgid "Username:"
+msgstr "Nom d'utilisateur:"
+
+msgid "Email:"
+msgstr "Email:"
+
+msgid "Welcome to User Authentication App"
+msgstr "Bienvenue dans l'application d'authentification des utilisateurs"
+
+msgid "Login to see user information"
+msgstr "Connectez-vous pour voir les informations de l'utilisateur"
+
+msgid "You have been registered and logged in successfully with Keycloak"
+msgstr "Vous avez été enregistré et connecté avec succès avec Keycloak"
+
+msgid "Registration failed. Please check the form."
+msgstr "L'enregistrement a échoué. Veuillez vérifier le formulaire."
+
+msgid "Close"
+msgstr "Fermer"
