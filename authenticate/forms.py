@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm, PasswordResetForm
 from django.contrib.auth.models import User
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 
 class SignUpForm(UserCreationForm):
@@ -24,13 +25,13 @@ class SignUpForm(UserCreationForm):
 
 
 class EditProfileForm(UserChangeForm):
-    username = forms.CharField(label="Username:",
+    username = forms.CharField(label=_("Username:"),
                                max_length=32, help_text="<small id='emailHelp' class='form-text text-muted'>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>", widget=forms.TextInput(attrs={'class': 'form-control'}))
-    first_name = forms.CharField(label="First Name:",
+    first_name = forms.CharField(label=_("FirstName:"),
                                  max_length=32, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    last_name = forms.CharField(label="Last Name:",
+    last_name = forms.CharField(label=_("LastName:"),
                                 max_length=32, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    email = forms.EmailField(label="Email",
+    email = forms.EmailField(label=_("Email:"),
                              max_length=50, widget=forms.EmailInput(attrs={'class': 'form-control'}))
     password = forms.CharField(label="",
                                max_length=50, widget=forms.PasswordInput(attrs={'type': 'hidden'}))

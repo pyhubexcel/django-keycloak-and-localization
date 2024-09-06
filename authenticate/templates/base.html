@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+{% load i18n %}
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -21,7 +21,7 @@
 <body>
     <!-- navigation bar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">Authentication App</a>
+        <a class="navbar-brand" href="{% url 'home' %}">{% trans "Authentication App" %}</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,20 +30,20 @@
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    <a class="nav-link" href="{% url 'logout' %}">{% trans "Logout" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
+                    <a class="nav-link" href="{% url 'edit_profile' %}">{% trans "Edit Profile" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'change_password' %}">Change Password</a>
+                    <a class="nav-link" href="{% url 'change_password' %}">{% trans "Change Password" %}</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login_keycloak' %}">Login</a>
+                    <a class="nav-link" href="{% url 'login_keycloak' %}">{% trans "Login" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    <a class="nav-link" href="{% url 'register' %}">{% trans "Register" %}</a>
                 </li>
                 {% endif %}
             </ul>

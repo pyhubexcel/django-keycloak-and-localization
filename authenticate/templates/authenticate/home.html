@@ -17,22 +17,20 @@
 
 <div class="container">
     <!-- Language Switcher -->
-    <div class="dropdown mb-4">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {% trans "Language" %}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <form id="languageForm" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.path }}">  <!-- Keeps track of current path -->
+        
+        <select name="language" id="languageSelect" class="form-control">
             {% get_current_language as LANGUAGE_CODE %}
             {% get_available_languages as LANGUAGES %}
-            {% for language in LANGUAGES %}
-                {% if language.code != LANGUAGE_CODE %}
-                    <a class="dropdown-item" href="{% url 'set_language' %}?next={{ request.path }}&language={{ language.code }}">{{ language.name }}</a>
-                {% else %}
-                    <span class="dropdown-item active">{{ language.name }}</span>
-                {% endif %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name }}
+                </option>
             {% endfor %}
-        </div>
-    </div>
+        </select>
+    </form>
 
     <div class="col-md-6 offset-md-3">
         {% if request.user.is_authenticated %}
@@ -48,6 +46,13 @@
         {% endif %}
     </div>
 </div>
+
+<script>
+    // Listen for changes on the select element and submit the form
+    document.getElementById('languageSelect').addEventListener('change', function() {
+        document.getElementById('languageForm').submit();
+    });
+</script>
 
 {% comment %} <script>
     document.addEventListener("DOMContentLoaded", function() {

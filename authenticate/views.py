@@ -11,7 +11,7 @@ def logout_user(request):
     if request.user.is_authenticated:
         keycloak_openid.logout(request.session['refresh_token'])
         request.session.clear()
-        messages.success(request, "Logged out successfully")
+        messages.success(request, _("Logged out successfully"))
     return redirect('home')
 
 def edit_profile(request):
@@ -110,7 +110,12 @@ def home(request):
             request.session['access_token'] = refresh_token_response['access_token']
 
         user_info = keycloak_openid.userinfo(token=request.session['access_token'])
-        return render(request, 'authenticate/home.html', {'user_info': user_info})
+        translated_user_info = {
+            'name': _(user_info['name']),
+            'preferred_username': _(user_info['preferred_username']),
+            'email': _(user_info['email']),
+    }
+        return render(request, 'authenticate/home.html', {'user_info': translated_user_info})
     else:
         return render(request, 'authenticate/home.html')
 

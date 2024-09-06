@@ -44,12 +44,12 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'my_site.urls'
@@ -65,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -133,8 +134,8 @@ EMAIL_HOST_PASSWORD = ''
 KEYCLOAK = {
     'KEYCLOAK_SERVER_URL': 'http://localhost:8080/auth',
     'KEYCLOAK_REALM': 'master',
-    'KEYCLOAK_CLIENT_ID': 'user_demo',
-    'KEYCLOAK_CLIENT_SECRET': '1PvqTl3AqpN5KVfLDhmXK7mx4N2tum8S',
+    'KEYCLOAK_CLIENT_ID': 'OSG',
+    'KEYCLOAK_CLIENT_SECRET': 'ZCdstGAivQWygLqPEjrCbyKChcDaZHkd',
 }
 
 # Keycloak initialization
@@ -149,7 +150,7 @@ PASSWORD='admin123'
 from django.utils.translation import gettext_lazy as _
 
 # Localization settings
-LANGUAGE_CODE = 'en-us'  # Default language
+LANGUAGE_CODE = 'en'  # Default language
 USE_I18N = True  # Enable internationalization
 USE_L10N = True  # Enable localization
 USE_TZ = True  # Enable timezone support
