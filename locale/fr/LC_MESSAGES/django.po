@@ -33,15 +33,15 @@ msgstr "xxUser xxInformation"
 
 #: authenticate/templates/authenticate/home.html:41
 msgid "Name:"
-msgstr "xxName"
+msgstr "xxName:"
 
 #: authenticate/templates/authenticate/home.html:42
 msgid "Username:"
-msgstr "xxUsername"
+msgstr "xxUsername:"
 
 #: authenticate/templates/authenticate/home.html:43
 msgid "Email:"
-msgstr "xxEmail"
+msgstr "xxEmail:"
 
 #: authenticate/templates/authenticate/home.html:46
 msgid "Welcome to User Authentication App"
@@ -95,6 +95,10 @@ msgstr "xxChange"
 msgid "Logged out successfully"
 msgstr "xxLogged xxout xxsuccessfully"
 
+#: authenticate/views.py:22
+msgid "Profile Updated Successfully"
+msgstr "xxProfile xxUpdated xxSuccessfully"
+
 #: authenticate/views.py:114
 msgid "Yuvraj Singh"
 msgstr "xxYuvraj xxSingh"
@@ -105,15 +109,29 @@ msgstr "xxyuvraj"
 msgid "yuvraj.singh@openskygroup.com"
 msgstr "xxyuvraj.singh@openskygroup.com"
 
-msgid "Username:"
-msgstr "xxUsername:"
+msgid "UserName:"
+msgstr "xxUserName:"
 
 msgid "FirstName:"
-msgstr "xxFirstName"
+msgstr "xxFirstName:"
 
 msgid "LastName:"
 msgstr "xxLastName:"
 
+msgid "<small id='emailHelp' class='form-text text-muted'>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>"
+msgstr "<small id='emailHelp' class='form-text text-muted'>xxRequired. xx150 xxcharacters xxor xxfewer. xxLetters, xxdigits xxand @/./+/-/_ xxonly.</small>"
+
+msgid "Old password:"
+msgstr "xxOld xxpassword:"
+
+msgid "New password:"
+msgstr "xxNew xxpassword:"
+
+msgid "New password confirmation:"
+msgstr "xxNew xxpassword xxconfirmation:"
+
+msgid "<small><ul class='form-text text-muted'><li>Your password can't be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can't be a commonly used password.</li><li>Your password can't be entirely numeric.</li></ul></small>"
+msgstr "<small><ul class='form-text text-muted'><li>xxYour xxpassword xxcan't xxbe xxtoo xxsimilar xxto xxyour xxother xxpersonal xxinformation.</li><li>xxYour xxpassword xxmust xxcontain xxat xxleast 8 xxcharacters.</li><li>xxYour xxpassword xxcan't xxbe xxa xxcommonly xxused xxpassword.</li><li>xxYour xxpassword xxcan't xxbe xxentirely xxnumeric.</li></ul></small>"
 
 #: authenticate/views.py:140
 msgid "You have been registered and logged in successfully with Keycloak"
